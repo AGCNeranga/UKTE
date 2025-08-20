@@ -8,7 +8,7 @@ const bgImages = [
   "https://horsebetting.com.au/wp-content/smush-webp/2024/08/Gentleman-Roy.jpg.webp",
   "https://plantbasednews.org/app/uploads/2021/10/plant-based-news-horse-racing-1.jpg"
 ];
-
+// charith neranga website
 let current = 0;
 const bg1 = document.getElementById('bg1');
 const bg2 = document.getElementById('bg2');
@@ -28,7 +28,7 @@ setInterval(() => {
 document.getElementById("password").addEventListener("keypress", function (e) {
   if (e.key === "Enter") checkPassword();
 });
-
+// charith neranga website
 function checkPassword() {
   const entered = document.getElementById("password").value;
   if (entered === "lal1234") {
@@ -50,7 +50,7 @@ function escapeHtml(text) {
              .replace(/</g, "&lt;")
              .replace(/>/g, "&gt;");
 }
-
+// charith neranga website
 function clearAll() {
   document.getElementById('raceText').value = '';
   document.getElementById('meetingsInput').value = '';
@@ -75,7 +75,7 @@ function processText() {
     alert('Please paste race card text first.');
     return;
   }
-
+// charith neranga website
   const lines = text.split(/\r?\n/);
   let currentMeeting = 'Unknown';
   let raceNumberCounter = 0;
@@ -121,7 +121,7 @@ function processText() {
       }
       continue;
     }
-
+// charith neranga website
     if (timeOnlyLineRegex.test(line)) {
       raceNumberCounter++;
       const ukTime = line;
@@ -155,7 +155,7 @@ function processText() {
       continue;
     }
   }
-
+// charith neranga website
   if (races.length === 0) {
     output.innerHTML = '<p class="text-warning">No races found for the selected criteria.</p>';
     processedRaces = [];
@@ -188,7 +188,7 @@ function renderRaces(races) {
     </div>
   `).join('');
 }
-
+// charith neranga website
 function showTopRaces(limit) {
   if (!processedRaces.length) {
     alert("Please process races first.");
@@ -199,3 +199,4 @@ function showTopRaces(limit) {
 }
 
 let processedRaces = [];
+
