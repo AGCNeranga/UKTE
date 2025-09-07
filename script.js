@@ -198,7 +198,7 @@ function showTopRaces(limit) {
   renderRaces(topRaces);
 }
 
-// Best Race Per Meeting
+// AGCN Show Best Races Per Meeting (Sorted High /Low Prize)
 function showBestRacePerMeeting() {
   if (!processedRaces.length) {
     alert("Please process races first.");
@@ -212,10 +212,15 @@ function showBestRacePerMeeting() {
     }
   });
 
-  renderRaces(Object.values(bestRaces));
+  // Sort best races from highest prize → lowest prize
+  const sortedBestRaces = Object.values(bestRaces).sort((a, b) => b.prize - a.prize);
+
+  renderRaces(sortedBestRaces);
 }
 
+
 let processedRaces = [];
+
 
 
 
