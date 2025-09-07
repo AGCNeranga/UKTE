@@ -198,6 +198,24 @@ function showTopRaces(limit) {
   renderRaces(topRaces);
 }
 
+// Best Race Per Meeting
+function showBestRacePerMeeting() {
+  if (!processedRaces.length) {
+    alert("Please process races first.");
+    return;
+  }
+
+  const bestRaces = {};
+  processedRaces.forEach(r => {
+    if (!bestRaces[r.meeting] || r.prize > bestRaces[r.meeting].prize) {
+      bestRaces[r.meeting] = r;
+    }
+  });
+
+  renderRaces(Object.values(bestRaces));
+}
+
 let processedRaces = [];
+
 
 
